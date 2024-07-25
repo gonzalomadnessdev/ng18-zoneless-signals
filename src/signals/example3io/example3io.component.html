@@ -1,0 +1,21 @@
+<p>example3io works!</p>
+
+<label for="">Select con change event:</label><br>
+<select name="users" (change)="onSelect($event)">
+  @for (user of users; track user.id){
+    <option [value]="user.id">{{ user.name + " "  + user.lastname }}</option>
+  }
+</select>
+
+<br><br>
+
+<label for="">Select con Reactive Form:</label><br>
+<select name="users" [formControl]="userCtrl">
+  @for (user of users; track user.id){
+    <option [value]="user.id">{{ user.name + " "  + user.lastname }}</option>
+  }
+</select>
+
+<br><br>
+
+<example3child [selectedUser]="user()"></example3child>
