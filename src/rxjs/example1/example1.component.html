@@ -1,0 +1,14 @@
+<p>rxjs example1 works!</p>
+<button type="button" class="btn btn-primary" #btn>Refresh</button>
+<div *ngIf="users$ | async as users">
+  @for (user of users; track $index) {
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top"  [src]="user.avatar_url" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ user.login }}</h5>
+        <p class="card-text">{{ user.id }}</p>
+        <a [href]="user.html_url" class="btn btn-primary">GitHub</a>
+      </div>
+    </div>
+  }
+</div>
